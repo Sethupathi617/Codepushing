@@ -1,0 +1,212 @@
+package selenium.concept;
+
+import java.awt.AWTException;
+import java.awt.Frame;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class Base_Class {
+	public static WebDriver driver;
+
+	public static WebDriver getBrowser() {
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\User\\eclipse-workspaceNew\\Selenium_Project1\\Driver\\chromedriver.exe");
+		driver = new ChromeDriver();
+
+		// driver.get("https://en-gb.facebook.com/");
+		driver.manage().window().maximize();
+		
+		return driver;
+	}
+
+	public static void launchUrl(String url) {
+		driver.get(url);
+	}
+
+	public static void getTitle() {
+		String title = driver.getTitle();
+		System.out.println(title);
+	}
+
+	public static void getCurrentUrl() {
+		String currentUrl = driver.getCurrentUrl();
+		System.out.println(currentUrl);
+	}
+
+//NavigateTo()
+	public static void navigateTo(String url) {
+		driver.navigate().to(url);
+	}
+
+//NavigateBack()
+	public static void navigateBack() {
+		driver.navigate().back();
+	}
+
+//NavigateForward()
+	public static void navigateForward() {
+		driver.navigate().forward();
+	}
+
+//NavigateRefresh()
+	public static void navigateRefresh() {
+		driver.navigate().refresh();
+	}
+
+//Navigate Close()
+	public static void closeBrowser() {
+		driver.close();
+	}
+
+//Navigate Quit()
+	public static void quitBrowser() {
+		driver.quit();
+
+	}
+
+//Web Element
+	public static void inputValue(WebElement element, String value) {
+		element.sendKeys(value);
+	}
+
+	public static void clickOnElement(WebElement element) {
+		element.click();
+	}
+
+	public static void ClearTheElement(WebElement element) {
+		element.clear();
+	}
+
+	public static void getText(WebElement element) {
+		String text = element.getText();
+		System.out.println(text);
+	}
+
+	public static void isDisplayed(WebElement element) {
+		boolean displayed = element.isDisplayed();
+		System.out.println("isDisplayed:" + displayed);
+	}
+
+	public static void isEnabled(WebElement element) {
+		boolean enabled = element.isEnabled();
+		System.out.println("isEnabled:" + enabled);
+	}
+
+	public static void getAttribute(WebElement element, String options) {
+		if (options.equalsIgnoreCase("value")) {
+			String attribute2 = element.getAttribute("value");
+			System.out.println(attribute2);
+
+		} else if (options.equalsIgnoreCase("name")) {
+			String attribute = element.getAttribute("name");
+			System.out.println(attribute);
+		}
+	}
+
+	public static void Scroll(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", element);
+	}
+
+	// DropDown
+	public static void singleDropdown(WebElement element, String options, String value) {
+		Select s = new Select(element);
+		if (options.equalsIgnoreCase("index")) {
+			int parseInt = Integer.parseInt(value);
+			s.selectByIndex(parseInt);
+		} else if (options.equalsIgnoreCase("value")) {
+			s.selectByVisibleText(value);
+		} else if (options.equalsIgnoreCase("visibleText")) {
+			s.selectByVisibleText(value);
+		}
+	}
+
+	// Alert
+	public static void alertAccept(WebElement element, String options) {
+		Alert element1 = driver.switchTo().alert();
+		if (options.equalsIgnoreCase("accpt")) {
+			element1.accept();
+		} else if (options.equalsIgnoreCase("dismiss")) {
+			element1.dismiss();
+		} else if (options.equalsIgnoreCase("Text")) {
+			String text = element1.getText();
+			System.out.println(text);
+		}
+	}
+
+	// Action
+	public static void actionsMethod(String option,WebElement element) {
+		Actions act = new Actions(driver);
+		if (option.equalsIgnoreCase("move")) {
+			act.moveToElement(element).click().perform();
+
+		} else if (option.equalsIgnoreCase("click")) {
+			act.click(element).build().perform();
+		} else if (option.equalsIgnoreCase("contextclick")) {
+			act.contextClick(element).build().perform();
+		}
+	}
+
+	// Robot
+	public static void robotMethod(String option) throws AWTException {
+		Robot r = new Robot();
+		if (option.equalsIgnoreCase("down")) {
+			r.keyPress(KeyEvent.VK_DOWN);
+			r.keyRelease(KeyEvent.VK_DOWN);
+		} else if (option.equalsIgnoreCase("up")) {
+			r.keyPress(KeyEvent.VK_UP);
+			r.keyRelease(KeyEvent.VK_UP);
+		} else if (option.equalsIgnoreCase("enter")) {
+			r.keyPress(KeyEvent.VK_ENTER);
+		}
+
+	}
+    //Frame
+	
+	public static void frameConcept(WebElement element, String option) {
+		if(option.equalsIgnoreCase("SingleFrame")) {
+		driver.switchTo().frame(element);
+		
+		}
+		else if(option.equalsIgnoreCase("IndexOrString")) {
+			driver.switchTo().frame(option);
+		
+		}
+		else if(option.equalsIgnoreCase("Default")) {
+			driver.switchTo().defaultContent();
+		}
+	}	
+	
+	//Out Of Frame
+	public static void outOfFrame() {
+		
+		
+		driver.switchTo().defaultContent();
+		
+		
+
+	}
+
+
+	
+	//Sleep
+	public static void sleep(int a) throws InterruptedException {
+		Thread.sleep(a);
+	}
+
+
+//JavaScript click
+	public static void jsClick(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", element);
+	}
+
+}

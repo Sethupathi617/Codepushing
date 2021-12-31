@@ -1,0 +1,48 @@
+	WebElement Adult = driver.findElement(By.xpath("//select[@name='adult_room']"));
+	dropDown(Adult, "index", "2");
+	
+	WebElement Children = driver.findElement(By.xpath("//select[@name='child_room']"));
+	dropDown(Children, "visibleText", "4 - Four");
+	
+	WebElement submit = driver.findElement(By.id("Submit"));
+	clickOnElement(submit);
+	
+	WebElement radio = driver.findElement(By.xpath("//input[@id='radiobutton_0']"));
+	clickOnElement(radio);
+	
+	WebElement cont = driver.findElement(By.xpath("//input[@id='continue']"));
+	clickOnElement(cont);
+	
+	WebElement firstname = driver.findElement(By.xpath("//input[@id='first_name']"));
+	inputValue(firstname, "uday");
+	
+	WebElement lastname = driver.findElement(By.xpath("//input[@id='last_name']"));
+	inputValue(lastname, "savuk");
+	
+	WebElement address = driver.findElement(By.xpath("//textarea[@name='address']"));
+	inputValue(address, "xxx,yyy,zzz");
+	
+	WebElement cc_num = driver.findElement(By.xpath("//input[@id='cc_num']"));
+	inputValue(cc_num, "1234567890987654");
+	
+	WebElement cctype = driver.findElement(By.xpath("//select[@id='cc_type']"));
+	dropDown(cctype, "visibleText", "Master Card");
+	
+	WebElement cctypemonth = driver.findElement(By.xpath("//select[@id='cc_exp_month']"));
+	dropDown(cctypemonth, "VisibleText", "September");
+	WebElement ccyear = driver.findElement(By.xpath("//select[@id='cc_exp_year']"));
+	dropDown(ccyear, "visibleText", "2022");
+	
+	WebElement CVVNum = driver.findElement(By.xpath("//input[@id='cc_cvv']"));
+	inputValue(CVVNum, "345");
+	
+	WebElement Book_now = driver.findElement(By.xpath("//input[@id='book_now']"));
+	clickOnElement(Book_now);
+	sleep(5000);
+	
+	WebElement itinerary = driver.findElement(By.xpath("//input[@id='my_itinerary']"));
+	clickOnElement(itinerary);
+
+	}
+
+}

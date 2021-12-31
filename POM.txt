@@ -1,0 +1,359 @@
+//Booking_Page
+package com.Pom.com;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Booking_Page {
+	
+	public WebDriver driver;
+	
+	@FindBy(xpath="//select[@id='location']")
+	private WebElement location;
+
+	@FindBy(xpath="//select[@id='hotels']")
+	private WebElement hotels;
+	
+	@FindBy(xpath="//select[@id='room_type']")
+	private WebElement Roomtype;
+	
+	@FindBy(xpath="//select[@id='room_nos']")
+	private WebElement Noroom;
+	
+	@FindBy(xpath="//input[@name='datepick_in']")
+	private WebElement indate;
+	
+	@FindBy(xpath="//input[@id='datepick_out']")
+	private WebElement outdate;
+	
+	@FindBy(xpath="//select[@name='adult_room']")
+	private WebElement adult;
+	
+	@FindBy(xpath="//select[@name='child_room']")
+	private WebElement children;
+	
+	@FindBy(id="Submit")
+	private WebElement click;
+	
+	public Booking_Page(WebDriver driver2) {
+		this.driver = driver2;
+			PageFactory.initElements(driver, this);
+			}
+
+			public WebElement getLocation() {
+				return location;
+			}
+
+			public WebElement getHotels() {
+				return hotels;
+			}
+
+			public WebElement getRoomtype() {
+				return Roomtype;
+			}
+
+			public WebElement getNoroom() {
+				return Noroom;
+			}
+
+			public WebElement getIndate() {
+				return indate;
+			}
+
+			public WebElement getOutdate() {
+				return outdate;
+			}
+	
+			public WebElement getAdult() {
+				return adult;
+			}
+
+			public WebElement getChildren() {
+				return children;
+			}
+
+			public WebElement getClick() {
+				return click;
+			}
+	
+}
+
+//Confirm Page
+
+package com.Pom.com;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Confirm_Page {
+		public Confirm_Page(WebDriver driver2) {
+			this.driver = driver2;
+			PageFactory.initElements(driver, this);
+		
+		}
+	
+		public WebDriver driver;
+	@FindBy(xpath="//input[@id='my_itinerary']")
+	private WebElement click;
+	
+	
+	
+	public WebElement getClick() {
+		return click;
+	}
+}
+
+//Continue Page
+
+package com.Pom.com;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Continue_Page {
+	public Continue_Page(WebDriver driver2) {
+		this.driver = driver2;
+		PageFactory.initElements(driver, this);
+	
+	}
+
+	public WebDriver driver;
+	
+	@FindBy(xpath="//input[@id='first_name']")
+	private WebElement firstname;
+	
+	@FindBy(xpath="//input[@id='last_name']")
+	private WebElement lastname;
+	
+	@FindBy(xpath="//textarea[@name='address']")
+	private WebElement address;
+	
+	@FindBy(xpath="//input[@id='cc_num']")
+	private WebElement cc_num;
+	
+	@FindBy(xpath="//select[@id='cc_type']")
+	private WebElement cctype;
+	
+	@FindBy(xpath="//select[@id='cc_exp_month']")
+	private WebElement month;
+	
+	@FindBy(xpath="//select[@id='cc_exp_year']")
+	private WebElement year;
+	
+	@FindBy(xpath="//input[@id='cc_cvv']")
+	private WebElement cvvnum;
+	
+	@FindBy(xpath="//input[@id='book_now']")
+	private WebElement book;
+	
+	@FindBy(xpath="//input[@id='my_itinerary']")
+	private WebElement click;
+
+	public WebElement getFirstname() {
+		return firstname;
+	}
+
+	public WebElement getLastname() {
+		return lastname;
+	}
+
+	public WebElement getAddress() {
+		return address;
+	}
+
+	public WebElement getCc_num() {
+		return cc_num;
+	}
+
+	public WebElement getCctype() {
+		return cctype;
+	}
+
+	public WebElement getMonth() {
+		return month;
+	}
+
+	public WebElement getYear() {
+		return year;
+	}
+
+	public WebElement getCvvnum() {
+		return cvvnum;
+	}
+
+	public WebElement getBook() {
+		return book;
+	}
+
+}
+
+
+//Continue Page
+
+package com.Pom.com;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Continue_Page {
+	public Continue_Page(WebDriver driver2) {
+		this.driver = driver2;
+		PageFactory.initElements(driver, this);
+	
+	}
+
+	public WebDriver driver;
+	
+	@FindBy(xpath="//input[@id='first_name']")
+	private WebElement firstname;
+	
+	@FindBy(xpath="//input[@id='last_name']")
+	private WebElement lastname;
+	
+	@FindBy(xpath="//textarea[@name='address']")
+	private WebElement address;
+	
+	@FindBy(xpath="//input[@id='cc_num']")
+	private WebElement cc_num;
+	
+	@FindBy(xpath="//select[@id='cc_type']")
+	private WebElement cctype;
+	
+	@FindBy(xpath="//select[@id='cc_exp_month']")
+	private WebElement month;
+	
+	@FindBy(xpath="//select[@id='cc_exp_year']")
+	private WebElement year;
+	
+	@FindBy(xpath="//input[@id='cc_cvv']")
+	private WebElement cvvnum;
+	
+	@FindBy(xpath="//input[@id='book_now']")
+	private WebElement book;
+	
+	@FindBy(xpath="//input[@id='my_itinerary']")
+	private WebElement click;
+
+	public WebElement getFirstname() {
+		return firstname;
+	}
+
+	public WebElement getLastname() {
+		return lastname;
+	}
+
+	public WebElement getAddress() {
+		return address;
+	}
+
+	public WebElement getCc_num() {
+		return cc_num;
+	}
+
+	public WebElement getCctype() {
+		return cctype;
+	}
+
+	public WebElement getMonth() {
+		return month;
+	}
+
+	public WebElement getYear() {
+		return year;
+	}
+
+	public WebElement getCvvnum() {
+		return cvvnum;
+	}
+
+	public WebElement getBook() {
+		return book;
+	}
+
+}
+//Login Page
+
+package com.Pom.com;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Login_Page {
+	public WebDriver driver;
+	
+	@FindBy(id="username")
+	private WebElement username;
+
+	@FindBy(id="password")
+	private WebElement password;
+	
+	@FindBy(id="login")
+	private WebElement login;
+	
+	
+	public Login_Page(WebDriver driver2) {
+		this.driver= driver2;
+		PageFactory.initElements(driver, this);
+	}
+
+	public WebElement getUsername() {
+		return username;
+	}
+
+	public WebElement getPassword() {
+		return password;
+	}
+
+	public WebElement getLogin() {
+		return login;
+	}
+	
+}
+
+
+//Select Page
+
+package com.Pom.com;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Select_Page {
+	
+	public Select_Page(WebDriver driver2) {
+		this.driver = driver2;
+		PageFactory.initElements(driver, this);
+	
+	}
+	
+	public WebDriver driver;
+	@FindBy(xpath="//input[@id='radiobutton_0']")
+	private WebElement radio;
+	
+	@FindBy(xpath="//input[@id='continue']")
+	private WebElement cont;
+	
+	
+	
+	public WebElement getRadio() {
+		return radio;
+	}
+
+	public WebElement getCont() {
+		return cont;
+	}
+
+}
+
